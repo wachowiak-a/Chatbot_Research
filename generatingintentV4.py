@@ -116,7 +116,9 @@ for x in perm:
 
 
         if(current_intent != number_of_intents):
-            actual_response = current_responses[0] + " Here are other things you can learn about:" + str(available_items)
+            y = []
+            y.append(", ".join(available_items))
+            actual_response = current_responses[0] + " Here are other things you can learn about: " + y[0]
             message.append(actual_response)
 
             #the last response of a branch will have no other information to share
@@ -131,7 +133,7 @@ for x in perm:
 
             #display name is what the intent is named in dialogflow and does not affect actual usage of the chatbot
             #currently it names the intents after the permutation, the position within the branch(i.e. branch number), and the current intent number
-            'display_name':str(conversation_items[item[x]]) + "branch:" + str(branch_number) + "intent:" +str(current_intent),
+            'display_name':str(conversation_items[item[x]]) + "|branch:" + str(branch_number) + "intent:" +str(current_intent),
             #no input context
 
             #output context is added
@@ -150,7 +152,7 @@ for x in perm:
             intent = {
             #display name is what the intent is named in dialogflow and does not affect actual usage of the chatbot
             #currently it names the intents after the permutation, the position within the branch(i.e. branch number), and the current intent number
-            'display_name':str(conversation_items[item[x]]) + "|branch:" + str(branch_number) + "intent:" +str(current_intent),
+            'display_name': str(conversation_items[item[x]]) + "|branch:" + str(branch_number) + "intent:" +str(current_intent),
 
             #input and output context is created, output context is the only one that needs a lifespan count
             'input_context_names':['projects/httptesting-jqewut/agent/sessions/1/contexts/' + input_context],
