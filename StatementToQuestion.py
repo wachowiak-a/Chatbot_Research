@@ -67,15 +67,6 @@ def qa_generator(inputStr):
 print(statement_one)
 qa_generator(statement_one)
 
-#removes everything and inserts a question
-
-
-#text = nltk.word_tokenize(question_one)
-#print(nltk.pos_tag(text))
-#print(nltk.pos_tag(nltk.word_tokenize("What is your name? His")))
-
-
-#if it contains a pronoun do this, if it contains something else do this, make a who, what when where why
 
 """
 CC coordinating conjunction
